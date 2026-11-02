@@ -1,0 +1,92 @@
+/* Effet « liquid morph » */
+
+/* ===== LIQUID MORPH : formes organiques qui se déforment en continu ===== */
+@keyframes morph {
+  0%,100% {
+    border-radius: 58% 42% 55% 45%/50% 58% 42% 50%;
+  }
+  33% {
+    border-radius: 42% 58% 38% 62%/58% 40% 60% 42%;
+  }
+  66% {
+    border-radius: 50% 50% 62% 38%/38% 56% 44% 62%;
+  }
+}
+
+@keyframes drift {
+  50% {
+    transform: translate(18px,-22px) rotate(8deg) scale(1.06);
+  }
+}
+
+.blob {
+  animation: morph 14s ease-in-out infinite,drift 18s ease-in-out infinite;
+}
+
+.b2 {
+  animation-duration: 17s,22s;
+  animation-direction: reverse;
+}
+
+.vis::before {
+  animation: morph 16s ease-in-out infinite;
+}
+
+.vis::after {
+  animation: morph 9s ease-in-out infinite;
+}
+
+/* ===== LIQUID MORPH : boutons (remplissage liquide au survol) ===== */
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 100%;
+  width: 170%;
+  aspect-ratio: 1;
+  background: var(--b);
+  transform: translate(-50%,0);
+  transition: transform .8s cubic-bezier(.2,.8,.2,1);
+  animation: morph 6s ease-in-out infinite;
+}
+
+.btn:hover::before {
+  transform: translate(-50%,-64%);
+}
+
+.btn.o:hover {
+  color: #fff;
+}
+
+/* ===== LIQUID MORPH : cartes, vignettes, filtres, menu (les coins se déforment au survol) ===== */
+.cd,.th,.chip,nav a {
+  transition: transform .3s,box-shadow .3s,border-color .3s,background .3s,color .3s,border-radius .6s cubic-bezier(.3,1.5,.5,1);
+}
+
+a.cd:hover {
+  border-radius: 34px 10px 34px 10px;
+}
+
+.th:hover,.th:focus-visible {
+  border-radius: 28px 8px 28px 8px;
+}
+
+.chip:hover,.chip[aria-pressed=true] {
+  border-radius: 18px 6px 18px 6px;
+}
+
+nav a:hover,nav a.on {
+  border-radius: 16px 6px 16px 6px;
+}
+
+a.cd:hover .dn {
+  animation: morph 5s ease-in-out infinite;
+}
+

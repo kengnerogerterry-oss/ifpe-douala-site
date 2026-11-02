@@ -1,0 +1,242 @@
+/* Responsive : en-tête mobile, grilles, écrans tactiles */
+
+/* ===== RESPONSIVE : base fluide ===== */
+section {
+  padding: clamp(44px,8vw,70px) 0;
+}
+
+.f {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.f .btn {
+  margin-top: 5px;
+  min-height: 50px;
+}
+
+/* ===== RESPONSIVE : grilles qui ne débordent jamais (pied de page, cartes, flèches du carrousel) ===== */
+.fg {
+  grid-template-columns: repeat(auto-fit,minmax(min(240px,100%),1fr));
+}
+
+.g {
+  grid-template-columns: repeat(auto-fit,minmax(min(250px,100%),1fr));
+}
+
+.fg>* {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ar[data-sc="-1"] {
+  left: 4px;
+}
+
+.ar[data-sc="1"] {
+  right: 4px;
+}
+
+/* ===== RESPONSIVE : en-tête compact + menu liquide (tablette et téléphone) ===== */
+@media(min-width:1041px) {
+  .nl {
+    display: contents;
+  }
+  .mb {
+    display: none;
+  }
+}
+
+@media(max-width:1040px) {
+  nav {
+    flex-wrap: nowrap;
+    padding: 8px 8px 8px 14px;
+    border-radius: 26px;
+  }
+  .lg {
+    margin-left: auto;
+  }
+  .mb {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 46px;
+    height: 46px;
+    margin-left: 6px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--sky);
+    cursor: pointer;
+  }
+  .mb i,.mb i::before,.mb i::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--b);
+    transition: transform .35s,background .3s,top .35s;
+  }
+  .mb i {
+    position: relative;
+  }
+  .mb i::before,.mb i::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  .mb i::before {
+    top: -6px;
+  }
+  .mb i::after {
+    top: 6px;
+  }
+  nav.open .mb i {
+    background: transparent;
+  }
+  nav.open .mb i::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  nav.open .mb i::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  .nl {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    top: calc(100% - 6px);
+    max-width: 1120px;
+    margin-inline: auto;
+    display: grid;
+    gap: 4px;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid var(--ln);
+    border-radius: 26px;
+    box-shadow: 0 24px 60px #0d4f8b33;
+    visibility: hidden;
+    clip-path: inset(0 0 100% 0 round 26px);
+    transition: clip-path .55s cubic-bezier(.2,.8,.2,1),visibility 0s .55s;
+  }
+  nav.open .nl {
+    visibility: visible;
+    clip-path: inset(0 round 26px);
+    transition-delay: 0s;
+  }
+  .nl a {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 0 18px;
+    border-radius: 18px;
+    font-size: 1.05rem;
+  }
+  .hero {
+    margin-top: -80px;
+    padding-top: 116px;
+  }
+}
+
+@media(max-width:820px) {
+  .f {
+    grid-template-columns: 1fr 1fr;
+  }
+  .f input {
+    grid-column: 1/-1;
+  }
+  .f .btn {
+    grid-column: 1/-1;
+  }
+}
+
+/* ===== RESPONSIVE : téléphone ===== */
+@media(max-width:560px) {
+  h1 {
+    font-size: clamp(2rem,9.4vw,2.6rem);
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hg {
+    gap: 18px;
+    padding-bottom: 56px;
+  }
+  .vis {
+    height: 290px;
+  }
+  .gc {
+    width: min(180px,54vw);
+    padding: 13px 15px;
+  }
+  .hero .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .f {
+    grid-template-columns: 1fr;
+  }
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-inline: -18px;
+    padding: 2px 18px 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .chips::-webkit-scrollbar {
+    display: none;
+  }
+  .chip {
+    flex: none;
+  }
+}
+
+.lg button {
+  white-space: nowrap;
+}
+
+/* ===== GALERIE : légendes des photos ===== */
+.gi figcaption {
+  margin-top: 10px;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--mu);
+}
+
+#lb figure {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#lb img {
+  max-height: calc(100dvh - 96px);
+}
+
+#lb figcaption {
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+#lb figcaption:empty {
+  display: none;
+}
+
+/* ===== RESPONSIVE : écrans tactiles (cibles d'au moins 44 px) ===== */
+@media(pointer:coarse) {
+  .chip,.btn {
+    min-height: 46px;
+  }
+  .lg button {
+    min-height: 40px;
+    padding-inline: 12px;
+  }
+}
+
