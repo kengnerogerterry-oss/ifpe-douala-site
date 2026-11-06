@@ -5,12 +5,12 @@ var DATA={
  "visuals": {
   "genie-mecanique": "assets/img/filieres/genie-mecanique.jpg",
   "bien-etre": "assets/img/filieres/bien-etre.jpg",
-  "genie-civil": "assets/img/filieres/genie-civil.jpg",
+  "genie-civil": "assets/img/filieres/genie-civil-electrique.jpg",
+  "genie-electrique": "assets/img/filieres/genie-civil-electrique.jpg",
   "genie-industriel": "assets/img/filieres/genie-industriel.jpg",
-  "informatique": "assets/img/filieres/informatique.jpg",
+  "informatique": "assets/img/filieres/informatique-gestion.jpg",
+  "gestion": "assets/img/filieres/informatique-gestion.jpg",
   "industrie-d-habillement": "assets/img/filieres/industrie-d-habillement.jpg",
-  "genie-electrique": "assets/img/filieres/genie-electrique.jpg",
-  "gestion": "assets/img/filieres/gestion.jpg",
   "paramedical": "assets/img/filieres/paramedical.jpg"
  },
  "posters": [

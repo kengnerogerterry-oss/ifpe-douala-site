@@ -1,16 +1,16 @@
 /* Base, mise en page et composants (variables, reset, layout, composants, animations) */
 
 :root {
-  --b: #0d4f8b;
-  --b2: #07305a;
-  --b3: #3f86c9;
-  --sky: #eaf2fa;
-  --h: #d65f08;
-  --h2: #f39a1e;
+  --b: #1a6bbd;
+  --b2: #0f4c8a;
+  --b3: #5ba4e6;
+  --sky: #f1f8ff;
+  --h: #f07a14;
+  --h2: #ffb03a;
   --hd: #b84e06;
   --tx: #10233a;
   --mu: #566a82;
-  --ln: #dde7f2;
+  --ln: #e6eef8;
   color-scheme: light;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top,0px);
@@ -91,7 +91,7 @@ nav {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--ln);
   border-radius: 28px;
-  box-shadow: 0 10px 40px #0d4f8b26;
+  box-shadow: 0 10px 40px #1a6bbd26;
 }
 
 nav a {
@@ -168,7 +168,7 @@ nav .logo small {
 .btn,nav a.btn,nav a.btn:hover {
   display: inline-block;
   background: linear-gradient(135deg,var(--h),var(--h2));
-  color: #fff;
+  color: var(--tx);
   border: 0;
   padding: 13px 24px;
   border-radius: 99px;
@@ -176,13 +176,13 @@ nav .logo small {
   text-decoration: none;
   cursor: pointer;
   font-size: .95rem;
-  box-shadow: 0 10px 24px #d65f0840;
+  box-shadow: 0 10px 24px #f07a1440;
   transition: transform .2s,box-shadow .2s;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 30px #d65f0855;
+  box-shadow: 0 16px 30px #f07a1455;
 }
 
 .btn.o {
@@ -203,14 +203,14 @@ nav .logo small {
   overflow: hidden;
   margin-top: -76px;
   padding: 150px 0 0;
-  background: radial-gradient(900px 600px at 88% 5%,#8fc3f277,transparent 60%),radial-gradient(600px 500px at 0 70%,#ffdfb8aa,transparent 60%),#fff;
+  background: radial-gradient(900px 600px at 88% 5%,#a9d3fa77,transparent 60%),radial-gradient(600px 500px at 0 70%,#ffe9ccaa,transparent 60%),#fff;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(#0d4f8b22 1.2px,transparent 1.2px);
+  background-image: radial-gradient(#1a6bbd22 1.2px,transparent 1.2px);
   background-size: 26px 26px;
   -webkit-mask-image: linear-gradient(#000,transparent 70%);
   mask-image: linear-gradient(#000,transparent 70%);
@@ -285,7 +285,7 @@ nav .logo small {
 .b1 {
   width: 360px;
   height: 360px;
-  background: #4c9be0;
+  background: #6db3f0;
   right: 4%;
   top: 40px;
 }
@@ -293,7 +293,7 @@ nav .logo small {
 .b2 {
   width: 260px;
   height: 260px;
-  background: #ffae5c;
+  background: #ffc27a;
   left: -60px;
   bottom: 60px;
   opacity: .35;
@@ -317,7 +317,7 @@ nav .logo small {
   border-radius: 44px;
   background: linear-gradient(150deg,var(--b),var(--b2));
   transform: rotate(3deg);
-  box-shadow: 0 40px 80px #0d4f8b55;
+  box-shadow: 0 40px 80px #1a6bbd55;
 }
 
 .vis::after {
@@ -338,7 +338,7 @@ nav .logo small {
   border-radius: 22px;
   padding: 16px 18px;
   width: 230px;
-  box-shadow: 0 20px 50px #07305a33;
+  box-shadow: 0 20px 50px #0f4c8a33;
   animation: fl 8s ease-in-out infinite;
   z-index: 1;
 }
@@ -450,7 +450,7 @@ section {
   text-decoration: none;
   display: block;
   background: #fff;
-  box-shadow: 0 8px 28px #0d4f8b12;
+  box-shadow: 0 8px 28px #1a6bbd12;
   position: relative;
   overflow: hidden;
   transition: transform .3s,box-shadow .3s,border-color .3s;
@@ -458,8 +458,8 @@ section {
 
 a.cd:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 50px #0d4f8b26;
-  border-color: #b5d2ee;
+  box-shadow: 0 24px 50px #1a6bbd26;
+  border-color: #c4ddf4;
 }
 
 .cd::before {
@@ -538,7 +538,7 @@ a.cd:hover::before {
 .note {
   font-size: .88rem;
   color: var(--mu);
-  background: #fff4e9;
+  background: #fff8f0;
   border-left: 3px solid var(--h);
   border-radius: 0 12px 12px 0;
   padding: 9px 14px;
@@ -560,7 +560,7 @@ input,select {
 input:focus,select:focus {
   outline: 0;
   border-color: var(--b);
-  box-shadow: 0 0 0 4px #0d4f8b20;
+  box-shadow: 0 0 0 4px #1a6bbd20;
 }
 
 .f {
@@ -688,31 +688,31 @@ footer a {
 }
 
 .tb {
-  --c: #0d4f8b;
-  --cd: #0a3c6b;
-  --t: #eaf2fa;
-  --bd: #c5d9ee;
-  --tg: #d3e4f4;
+  --c: #1a6bbd;
+  --cd: #12508f;
+  --t: #f1f8ff;
+  --bd: #d3e6f8;
+  --tg: #e0eefb;
 }
 
 .to {
-  --c: #d9700a;
+  --c: #f08416;
   --cd: #7c3f04;
-  --t: #fff3e1;
-  --bd: #f5d29f;
-  --tg: #fde2bd;
+  --t: #fff7ea;
+  --bd: #fbe0b4;
+  --tg: #ffeccf;
 }
 
 .tn {
-  --c: #f39a1e;
+  --c: #ffb03a;
   --cd: #fff;
-  --t: #0d4f8b;
-  --bd: #0d4f8b;
+  --t: #1a6bbd;
+  --bd: #1a6bbd;
   --tg: #ffffff26;
 }
 
 .tn {
-  background: linear-gradient(150deg,#0d4f8b,#07305a);
+  background: linear-gradient(150deg,#1a6bbd,#0f4c8a);
 }
 
 .tc::before {
@@ -725,8 +725,12 @@ footer a {
   background: var(--c);
 }
 
+.to .dn {
+  color: var(--tx);
+}
+
 .tn .dn {
-  color: #07305a;
+  color: #0f4c8a;
 }
 
 .tc h3 {
@@ -924,7 +928,7 @@ nav .logo b {
 .cd {
   border-radius: var(--r);
   padding: 28px;
-  box-shadow: 0 2px 6px #0d4f8b0d,0 14px 34px #0d4f8b10;
+  box-shadow: 0 2px 6px #1a6bbd0d,0 14px 34px #1a6bbd10;
 }
 
 .cd::before {
@@ -935,7 +939,7 @@ nav .logo b {
 
 a.cd:hover {
   transform: translateY(-4px);
-  box-shadow: 0 22px 48px #0d4f8b24;
+  box-shadow: 0 22px 48px #1a6bbd24;
 }
 
 .cd h3 {

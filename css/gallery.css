@@ -12,7 +12,7 @@
   background: var(--sky);
   cursor: zoom-in;
   aspect-ratio: var(--ar,4/5);
-  box-shadow: 0 2px 6px #0d4f8b0d,0 14px 34px #0d4f8b14;
+  box-shadow: 0 2px 6px #1a6bbd0d,0 14px 34px #1a6bbd14;
   transition: transform .35s,box-shadow .35s;
 }
 
@@ -44,7 +44,7 @@
 
 .th:hover,.th:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 22px 48px #0d4f8b2e;
+  box-shadow: 0 22px 48px #1a6bbd2e;
 }
 
 .th:hover img,.th:focus-visible img {
@@ -71,7 +71,7 @@
 /* ===== CATALOGUE : vignette en tête de carte (décorative, le titre suffit) ===== */
 .ct {
   display: block;
-  aspect-ratio: 16/10;
+  aspect-ratio: 4/5;
   margin: -28px -28px 20px;
   overflow: hidden;
   background: var(--sky);
@@ -121,7 +121,7 @@ a.cd:hover .vf {
   aspect-ratio: 4/5;
   border-radius: var(--r);
   overflow: hidden;
-  box-shadow: 0 2px 6px #0d4f8b0d,0 14px 34px #0d4f8b14;
+  box-shadow: 0 2px 6px #1a6bbd0d,0 14px 34px #1a6bbd14;
 }
 
 /* ===== PAGE FILIÈRE : affiches et visuel de remplacement ===== */
@@ -202,7 +202,7 @@ a.cd:hover .vf {
   background: #fff;
   color: var(--b);
   font: 700 1.6rem/1 var(--fh);
-  box-shadow: 0 8px 24px #07305a40;
+  box-shadow: 0 8px 24px #0f4c8a40;
   cursor: pointer;
   transition: .2s;
 }

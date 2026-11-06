@@ -116,7 +116,7 @@ section {
     background: #fff;
     border: 1px solid var(--ln);
     border-radius: 26px;
-    box-shadow: 0 24px 60px #0d4f8b33;
+    box-shadow: 0 24px 60px #1a6bbd33;
     visibility: hidden;
     clip-path: inset(0 0 100% 0 round 26px);
     transition: clip-path .55s cubic-bezier(.2,.8,.2,1),visibility 0s .55s;
