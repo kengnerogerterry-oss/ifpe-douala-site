@@ -1,0 +1,71 @@
+/* ===== [MODIF 2 – MODE SOMBRE] Thème sombre, bouton bascule, transitions =====
+   Fonctionnement : <html data-theme="dark|light"> est posé par le script de index.html puis js/theme.js.
+   Les couleurs du site passent par des variables (définies en clair dans base.css :root) ; ce fichier les redéfinit
+   pour le sombre. Contrastes visés : texte ≥ 4,5:1 (WCAG AA). */
+
+/* ----- 1. Variables du thème sombre ----- */
+html[data-theme="dark"] {
+  color-scheme: dark;                 /* champs, listes déroulantes et barres de défilement natifs en sombre */
+  --bg: #0b1522;  --card: #111f33;  --nav-bg: #0e1b2ce6;
+  --sky: #0f2036; --ln: #213853;                       /* fonds secondaires et bordures */
+  --tx: #e6eef8;  --mu: #9db1c8;                       /* texte principal / secondaire */
+  --bt: #7bb8f2;  --hd: #ffb03a;                       /* bleu et orange « texte » éclaircis */
+  --note-bg: #261c10;
+  --sh1: 0 2px 6px #0006,0 14px 34px #0004;  --sh2: 0 22px 48px #0008;  --sh3: 0 10px 40px #0007;
+  --hero-g1: #1a6bbd40; --hero-g2: #f07a1424; --dots: #7bb8f220;
+  --dk-grad: linear-gradient(140deg,#123e6e,#0a2747);
+  --ft-bg: #07101b; --mq-bg: #123f70;
+}
+
+/* ----- 2. Composants qui ont besoin d'un réglage propre ----- */
+/* Cartes de filière teintées (bleu / orange) : fond, bordure, étiquettes et titres adaptés */
+html[data-theme="dark"] .tb { --cd: #9ccbf7; --t: #10243b; --bd: #244a75; --tg: #183457; }
+html[data-theme="dark"] .to { --cd: #ffc27a; --t: #2a1c0c; --bd: #5b3a12; --tg: #3d2810; }
+/* Kicker de la page filière : la couleur inline (foncée) serait illisible */
+html[data-theme="dark"] .dc .k { color: var(--h2); }
+html[data-theme="dark"] .dc .k::before { background: var(--h2); }
+/* Halos décoratifs plus discrets */
+html[data-theme="dark"] .blob { opacity: .22; }
+html[data-theme="dark"] .b2 { opacity: .18; }
+/* Logos bleus sur transparent : posés sur une pastille blanche pour rester lisibles */
+html[data-theme="dark"] nav .logo img { background: #fff; border-radius: 8px; box-shadow: 0 0 0 4px #fff; margin-left: 4px; }
+html[data-theme="dark"] .il { box-sizing: content-box; padding: 10px 14px; background: #fff; border-radius: 14px; }
+input::placeholder { color: var(--mu); opacity: .8; }
+
+/* ----- 3. Bouton bascule (barre de navigation) ----- */
+.tm {
+  display: inline-grid; place-items: center; flex: none;
+  width: 40px; height: 40px; margin-left: 6px; border: 0; border-radius: 8px;
+  background: var(--sky); color: var(--bt); cursor: pointer;
+  transition: background .2s, color .2s, transform .2s;
+}
+.tm:hover { background: var(--b); color: #fff; }
+.tm:focus-visible { outline: 3px solid var(--h); outline-offset: 2px; }
+.tm .i-sun { display: none; }                                  /* clair : on montre la lune (« passer en sombre ») */
+html[data-theme="dark"] .tm .i-sun { display: inline; }         /* sombre : on montre le soleil */
+html[data-theme="dark"] .tm .i-moon { display: none; }
+@media(pointer:coarse) { .tm { min-width: 44px; min-height: 44px; } }
+
+/* ----- 4. Transition fluide au changement de thème (classe posée 0,4 s par js/theme.js) ----- */
+@media(prefers-reduced-motion:no-preference) {
+  html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after {
+    transition: background-color .35s, color .35s, border-color .35s, box-shadow .35s, fill .35s !important;
+  }
+}
+
+/* ----- 5. Responsive du bouton : tablette / téléphone ----- */
+@media(max-width:1040px) { .tm { border-radius: 50%; } }
+@media(max-width:400px) {              /* petits téléphones : barre compactée pour que tout tienne sur 320 px */
+  nav { padding: 6px 6px 6px 10px; }
+  nav .logo small { display: none; }
+  .lg { margin-left: auto; }
+  .lg button { padding: 6px 7px; font-size: .72rem; }
+  .tm { width: 38px; height: 38px; margin-left: 4px; }
+  .mb { width: 40px; height: 40px; margin-left: 4px; }
+}
+@media(max-width:350px) {              /* très petits écrans (320 px) : dernier ajustement pour éviter tout débordement */
+  .lg button { padding: 6px 5px; }
+  nav .logo { gap: 6px; }
+  nav .logo b { font-size: 1.1rem; }
+  html[data-theme="dark"] nav .logo img { margin-left: 0; }
+}

@@ -12,7 +12,7 @@
   background: var(--sky);
   cursor: zoom-in;
   aspect-ratio: var(--ar,4/5);
-  box-shadow: 0 2px 6px #0d4f8b0d,0 14px 34px #0d4f8b14;
+  box-shadow: var(--sh1); /* [MODE SOMBRE] ombre adaptable */
   transition: transform .35s,box-shadow .35s;
 }
 
@@ -44,7 +44,7 @@
 
 .th:hover,.th:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 22px 48px #0d4f8b2e;
+  box-shadow: var(--sh2); /* [MODE SOMBRE] ombre adaptable */
 }
 
 .th:hover img,.th:focus-visible img {
@@ -71,13 +71,15 @@
 /* ===== CATALOGUE : vignette en tête de carte (décorative, le titre suffit) ===== */
 .ct {
   display: block;
-  aspect-ratio: 16/10;
+  aspect-ratio: 4/5;
   margin: -28px -28px 20px;
   overflow: hidden;
   background: var(--sky);
 }
 
-/* ===== VISUEL DE FILIÈRE : photo nette centrée sur sa copie floutée (évite l'étirement des petites images) ===== */
+/* ===== [MODIF 5 – VISUELS DE FILIÈRE] L'image remplit TOUT le cadre 4/5 (object-fit: cover) :
+   plus de copie floutée ni de bandes latérales, l'image se fond parfaitement dans son cadre (cartes + page filière).
+   Les visuels sont au format 4/5 ; seul « Industrie d'habillement » (≈0,70) est rogné de ~12 % en bas (zone des adresses). ===== */
 .ct {
   position: relative;
 }
@@ -86,34 +88,20 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: var(--b2);
-}
-
-.vz img {
-  position: absolute;
-  display: block;
-  top: 0;
-  height: 100%;
-}
-
-.vb {
-  left: 0;
-  width: 100%;
-  object-fit: cover;
-  filter: blur(16px) brightness(.85);
-  transform: scale(1.25);
+  background: var(--sky);
 }
 
 .vf {
-  left: 50%;
-  width: auto;
-  max-width: none;
-  transform: translateX(-50%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   transition: transform .5s;
 }
 
 a.cd:hover .vf {
-  transform: translateX(-50%) scale(1.05);
+  transform: scale(1.05);
 }
 
 .vp {
@@ -121,7 +109,7 @@ a.cd:hover .vf {
   aspect-ratio: 4/5;
   border-radius: var(--r);
   overflow: hidden;
-  box-shadow: 0 2px 6px #0d4f8b0d,0 14px 34px #0d4f8b14;
+  box-shadow: var(--sh1); /* [MODE SOMBRE] ombre adaptable */
 }
 
 /* ===== PAGE FILIÈRE : affiches et visuel de remplacement ===== */
@@ -148,7 +136,7 @@ a.cd:hover .vf {
 
 .chip {
   border: 1.5px solid var(--ln);
-  background: #fff;
+  background: var(--card); /* [MODE SOMBRE] était #fff */
   color: var(--mu);
   padding: 9px 16px;
   border-radius: 8px;
@@ -158,7 +146,7 @@ a.cd:hover .vf {
 }
 
 .chip:hover {
-  color: var(--b);
+  color: var(--bt);
   border-color: var(--b3);
 }
 
@@ -199,10 +187,10 @@ a.cd:hover .vf {
   margin-top: -32px;
   border: 0;
   border-radius: 50%;
-  background: #fff;
-  color: var(--b);
+  background: var(--card); /* [MODE SOMBRE] était #fff */
+  color: var(--bt);
   font: 700 1.6rem/1 var(--fh);
-  box-shadow: 0 8px 24px #07305a40;
+  box-shadow: 0 8px 24px #0f4c8a40;
   cursor: pointer;
   transition: .2s;
 }

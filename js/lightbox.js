@@ -1,5 +1,7 @@
 /* Lightbox */
 
+/* [MODIF 6] lbShow() utilise mediaOf() (js/posters.js) : l’image peut venir de DATA.posters (page filière) ou de DATA.photos (galerie). */
+
 /* ===== LIGHTBOX : clic, clavier (Échap, flèches, Tab), clic extérieur, swipe ===== */
 var lb={el:null,ids:[],i:0,from:null,x:0,y:0};
 function lbBuild(){var e=lb.el=document.createElement('div');e.id='lb';e.hidden=true;e.setAttribute('role','dialog');e.setAttribute('aria-modal','true');
@@ -9,7 +11,7 @@ e.addEventListener('pointerdown',function(ev){lb.x=ev.clientX;lb.y=ev.clientY});
 e.addEventListener('pointerup',function(ev){if(ev.pointerType=='mouse')return;var dx=ev.clientX-lb.x,dy=ev.clientY-lb.y;
 if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))lbStep(dx<0?1:-1);else if(dy>90)lbClose()});
 document.body.appendChild(e)}
-function lbShow(){var p=DATA.posters.filter(function(x){return x.id==lb.ids[lb.i]})[0],im=lb.el.querySelector('img'),b=lb.el.querySelectorAll('button'),many=lb.ids.length>1;
+function lbShow(){var p=mediaOf(lb.ids[lb.i]),im=lb.el.querySelector('img'),b=lb.el.querySelectorAll('button'),many=lb.ids.length>1;
 im.src=p.src;im.alt=altOf(p);lb.el.querySelector('figcaption').textContent=p.cap?tr(p.cap):'';lb.el.setAttribute('aria-label',altOf(p));
 b[0].setAttribute('aria-label',t('closeL'));b[1].setAttribute('aria-label',t('prevL'));b[2].setAttribute('aria-label',t('nextL'));b[1].hidden=b[2].hidden=!many}
 function lbStep(s){lb.i=(lb.i+s+lb.ids.length)%lb.ids.length;lbShow()}

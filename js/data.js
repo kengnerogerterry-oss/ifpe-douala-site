@@ -1,13 +1,19 @@
 /* Données : configuration, campus, filières */
 
 /* ===== DONNÉES — issues de la bannière officielle de l’IFPE Douala ===== */
+
+/* [MODIF 5 – LOCALISATIONS] Adresses mises à jour pour 4 campus (format « fr|en|zh ») :
+   - Campus 3 Dakar, Campus 4 Bonamoussadi, Campus 5 Cité SIC, Campus 6 Bonabéri.
+   - Les textes français reprennent exactement les informations fournies. Aucun point final : la page campus
+     ajoute elle-même « , Douala. » après l’adresse (voir js/router.js).
+   - Les libellés de quartier (champ v) deviennent « Cité SIC » et « Bonabéri ». Yassa et Akwa sont inchangés. */
 var CFG={wa:'+237691912510',mail:'ifpedouala@gmail.com',tel:['+237691912510','+237656625361','+237674714342'],fb:'Institut de formation professionnelle pour l’emploi',fbu:'https://www.facebook.com/share/1C5KpdVu2m/'};
 var C=[{s:'campus-1',n:'Campus 1|Campus 1|校区 1',v:'Yassa',a:'Yassa, sis Nkolbong, derrière Hôtel du midi|Yassa, located at Nkolbong, behind Hôtel du Midi|Yassa，位于 Nkolbong，Hôtel du Midi 酒店后面'},
 {s:'campus-2',n:'Campus 2|Campus 2|校区 2',v:'Akwa',a:'Akwa, carrefour Équipement, derrière l’immeuble Samsung|Akwa, Équipement junction, behind the Samsung building|Akwa，Équipement 路口，三星大楼后面'},
-{s:'campus-3',n:'Campus 3|Campus 3|校区 3',v:'Dakar',a:'Dakar, à 100 m du rond-point, en allant vers Bocom, pont Blanchisseur|Dakar, 100 m from the roundabout, on the way to Bocom, Blanchisseur bridge|Dakar，距环岛 100 米，往 Bocom 方向，Blanchisseur 桥'},
-{s:'campus-4',n:'Campus 4|Campus 4|校区 4',v:'Bonamoussadi',a:'Bonamoussadi, carrefour Satan Barbara, 20 m à droite en direction du carrefour Maçon|Bonamoussadi, Satan Barbara junction, 20 m to the right towards Maçon junction|Bonamoussadi，Satan Barbara 路口，往 Maçon 路口方向右侧 20 米'},
-{s:'campus-5',n:'Campus 5|Campus 5|校区 5',v:'Cité Sic',a:'Cité Sic, terminus Cité Sic|Cité Sic, Cité Sic terminus|Cité Sic，Cité Sic 终点站'},
-{s:'campus-6',n:'Campus 6|Campus 6|校区 6',v:'Bonaberie',a:'Bonaberie|Bonaberie|Bonaberie'}];
+{s:'campus-3',n:'Campus 3|Campus 3|校区 3',v:'Dakar',a:'Carrefour clinique le suivi, au dessus de Cefor hôtellerie|Clinique Le Suivi junction, above Cefor hôtellerie|Clinique Le Suivi 路口，Cefor hôtellerie 楼上'},
+{s:'campus-4',n:'Campus 4|Campus 4|校区 4',v:'Bonamoussadi',a:'En face pharmacie parcours vita, immeuble carrelé blanc 3e niveau|Opposite the Parcours Vita pharmacy, white-tiled building, 3rd floor|Parcours Vita 药房对面，白色瓷砖大楼，3 楼'},
+{s:'campus-5',n:'Campus 5|Campus 5|校区 5',v:'Cité SIC',a:'Montée BP, citée première entrée à gauche après l’église catholique|Montée BP, first entrance on the left of the cité, after the Catholic church|Montée BP，过了天主教堂后，小区第一个入口在左侧'},
+{s:'campus-6',n:'Campus 6|Campus 6|校区 6',v:'Bonabéri',a:'Premier bâtiment juste avant Mayor|First building just before Mayor|Mayor 之前的第一栋建筑'}];
 var D=[
 {n:'Génie mécanique|Mechanical Engineering|机械工程',f:['Mécatronique|Mechatronics|机电一体化','Mécanique automobile|Automotive Mechanics|汽车机械','Mécanique des engins lourds|Heavy Machinery Mechanics|重型机械维修','Climatisation automobile|Automotive Air Conditioning|汽车空调','Électricité automobile|Automotive Electrics|汽车电气','Tôlerie automobile|Auto Body Work|汽车钣金']},
 {n:'Bien-être|Wellness & Beauty|健康与美容',f:['Esthétique et cosmétique|Aesthetics and Cosmetics|美容与化妆品','Coiffure mixte|Unisex Hairdressing|男女通用美发','Make-up|Make-up|化妆','Massage|Massage|按摩','Onglerie|Nail Care|美甲','Esthétique et coiffure|Aesthetics and Hairdressing|美容美发']},

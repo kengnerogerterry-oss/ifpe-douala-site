@@ -75,7 +75,7 @@ section {
     width: 20px;
     height: 2px;
     border-radius: 2px;
-    background: var(--b);
+    background: var(--bt); /* [MODE SOMBRE] traits du burger lisibles en sombre */
     transition: transform .35s,background .3s,top .35s;
   }
   .mb i {
@@ -113,10 +113,10 @@ section {
     display: grid;
     gap: 4px;
     padding: 12px;
-    background: #fff;
+    background: var(--card); /* [MODE SOMBRE] menu mobile : était #fff */
     border: 1px solid var(--ln);
     border-radius: 26px;
-    box-shadow: 0 24px 60px #0d4f8b33;
+    box-shadow: 0 24px 60px #1a6bbd33;
     visibility: hidden;
     clip-path: inset(0 0 100% 0 round 26px);
     transition: clip-path .55s cubic-bezier(.2,.8,.2,1),visibility 0s .55s;

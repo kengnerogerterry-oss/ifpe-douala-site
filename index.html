@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8">
+<!-- [SÉCURITÉ] Politique de sécurité du contenu (CSP) : seuls les scripts du site (et le script anti-flash, identifié par son empreinte)
+     peuvent s'exécuter ; aucune connexion réseau, aucun objet/iframe externe ; seules les polices Google sont autorisées.
+     Si vous modifiez le script inline du <head>, recalculez son empreinte sha256 (sinon le thème ne s'applique plus). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-jA7/HYOOzVuMak6NJkFyIQHruXzjOYBT2rO/OiNEGzY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>IFPE Douala — Institut de Formation Professionnelle pour l’Emploi</title>
-<meta name="description" content="IFPE Douala : 9 filières de formation professionnelle, 6 campus à Douala. Le savoir devient métier.">
+<meta name="description" content="IFPE Douala : 9 filières de formation professionnelle, 6 campus à Douala. Le savoir devient un métier.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-<meta name="theme-color" content="#0d4f8b">
+<meta name="theme-color" content="#1a6bbd">
+<!-- [MODIF 2 – MODE SOMBRE] Appliqué AVANT le premier affichage (évite le flash blanc) :
+     thème enregistré (localStorage « ifpe-theme ») sinon préférence système. Le bouton et la persistance sont dans js/theme.js -->
+<script>(function(){var t=null;try{t=localStorage.getItem('ifpe-theme')}catch(e){}
+if(t!=='light'&&t!=='dark')t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+document.documentElement.setAttribute('data-theme',t);
+var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0b1522':'#1a6bbd')})();</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;700;800&display=swap">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/gallery.css">
-<link rel="stylesheet" href="css/liquid.css">
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/base.css?v=3">
+<link rel="stylesheet" href="css/gallery.css?v=3">
+<link rel="stylesheet" href="css/liquid.css?v=3">
+<link rel="stylesheet" href="css/responsive.css?v=3">
+<link rel="stylesheet" href="css/theme.css?v=3"> <!-- [MODIF 2] thème sombre : à charger en dernier -->
 </head><body>
 <header><nav id="nv"></nav></header>
 <main id="app" tabindex="-1"></main>
 <footer><div class="w" id="ft"></div></footer>
 <script src="js/i18n.js"></script>
-<script src="js/data.js"></script>
-<script src="js/helpers.js"></script>
-<script src="js/layout.js"></script>
-<script src="js/pages.js"></script>
-<script src="js/media-data.js"></script>
-<script src="js/posters.js"></script>
-<script src="js/gallery.js"></script>
-<script src="js/lightbox.js"></script>
-<script src="js/menu.js"></script>
-<script src="js/router.js"></script></body></html>
+<script src="js/data.js?v=3"></script>
+<script src="js/helpers.js?v=3"></script>
+<script src="js/layout.js?v=3"></script>
+<script src="js/pages.js?v=3"></script>
+<script src="js/media-data.js?v=3"></script>
+<script src="js/posters.js?v=3"></script>
+<script src="js/gallery.js?v=3"></script>
+<script src="js/lightbox.js?v=3"></script>
+<script src="js/menu.js?v=3"></script>
+<script src="js/theme.js?v=3"></script> <!-- [MODIF 2] bouton bascule + persistance -->
+<script src="js/router.js?v=3"></script></body></html>

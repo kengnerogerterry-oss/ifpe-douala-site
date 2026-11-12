@@ -1,28 +1,24 @@
 /* Données des images (chemins) — voir assets/img */
 
-/* ===== AFFICHES ET VISUELS DE FILIÈRE : données (source unique ; alt trilingue des affiches générales, les autres sont déduits de la filière) ===== */
+/* ===== [MODIF 6 – GALERIE] DONNÉES DES IMAGES =====
+   - visuals : visuel de chaque filière (cartes + page filière sans affiche) — [MISE À JOUR] nouvelles affiches ; Informatique et Gestion partagent la même image
+   - posters : affiches des filières, affichées UNIQUEMENT sur la page de leur filière (plus dans la galerie)
+   - photos  : photos de la rentrée solennelle = seul contenu de la galerie (js/gallery.js)
+   - Les 4 affiches institutionnelles (p1, p3, p4, p5), qui ne servaient qu'à la galerie, ont été supprimées
+     (entrées ci-dessous + fichiers assets/img/affiches/p1|p3|p4|p5.jpg). */
 var DATA={
  "visuals": {
   "genie-mecanique": "assets/img/filieres/genie-mecanique.jpg",
   "bien-etre": "assets/img/filieres/bien-etre.jpg",
   "genie-civil": "assets/img/filieres/genie-civil.jpg",
-  "genie-industriel": "assets/img/filieres/genie-industriel.jpg",
-  "informatique": "assets/img/filieres/informatique.jpg",
-  "industrie-d-habillement": "assets/img/filieres/industrie-d-habillement.jpg",
   "genie-electrique": "assets/img/filieres/genie-electrique.jpg",
-  "gestion": "assets/img/filieres/gestion.jpg",
+  "genie-industriel": "assets/img/filieres/genie-industriel.jpg",
+  "informatique": "assets/img/filieres/informatique-gestion.jpg",
+  "gestion": "assets/img/filieres/informatique-gestion.jpg",
+  "industrie-d-habillement": "assets/img/filieres/industrie-d-habillement.jpg",
   "paramedical": "assets/img/filieres/paramedical.jpg"
  },
  "posters": [
-  {
-   "id": "p1",
-   "d": null,
-   "w": 1024,
-   "h": 1280,
-   "crop": 0.2,
-   "alt": "Affiche institutionnelle : développer ses compétences avant de chercher un emploi|Institutional poster: build your skills before looking for a job|机构海报：求职前先培养技能",
-   "src": "assets/img/affiches/p1.jpg"
-  },
   {
    "id": "p2",
    "d": "industrie-d-habillement",
@@ -31,33 +27,6 @@ var DATA={
    "crop": 0.13,
    "alt": "",
    "src": "assets/img/affiches/p2.jpg"
-  },
-  {
-   "id": "p3",
-   "d": null,
-   "w": 1024,
-   "h": 1280,
-   "crop": 0.13,
-   "alt": "Affiche institutionnelle : apprendre les compétences que recherchent les entreprises|Institutional poster: learn the skills employers look for|机构海报：学习企业需要的技能",
-   "src": "assets/img/affiches/p3.jpg"
-  },
-  {
-   "id": "p4",
-   "d": null,
-   "w": 1024,
-   "h": 1280,
-   "crop": 0.17,
-   "alt": "Affiche institutionnelle : visiter l’école avant de la choisir|Institutional poster: visit the school before choosing it|机构海报：择校前先参观学校",
-   "src": "assets/img/affiches/p4.jpg"
-  },
-  {
-   "id": "p5",
-   "d": null,
-   "w": 1024,
-   "h": 1280,
-   "crop": 0.2,
-   "alt": "Affiche institutionnelle : le premier jour de votre avenir|Institutional poster: the first day of your future|机构海报：您未来的第一天",
-   "src": "assets/img/affiches/p5.jpg"
   },
   {
    "id": "p6",
@@ -112,7 +81,9 @@ var DATA={
    "crop": 0.1,
    "alt": "",
    "src": "assets/img/affiches/p11.jpg"
-  },
+  }
+ ],
+ "photos": [
   {
    "id": "f1",
    "d": null,

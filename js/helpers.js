@@ -1,5 +1,7 @@
 /* Utilitaires : slug, formats, WhatsApp, téléphone */
 
+/* [SÉCURITÉ] Échappe &, <, >, " et ' avant toute insertion dans du HTML généré */
+var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')};
 var slug=function(x){return x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')};
 var VAR=['tb','to','tn'];
 D.forEach(function(d,i){d.s=slug(d.n.split('|')[0]);d.i=('0'+(i+1)).slice(-2);d.v=VAR[i%3]});
